@@ -1,6 +1,6 @@
 ﻿# giunei.dev
 
-Site oficial da marca **Giunei** — portfólio com foco em produto e engenharia, não em currículo genérico.
+Site oficial da marca **Giunei** — portfólio com foco em produto e engenharia.
 
 **Live:** [giunei.dev](https://giunei.dev) *(em breve)*  
 **Produto destaque:** [My Museum](https://my-museum-ui-zeta.vercel.app/)

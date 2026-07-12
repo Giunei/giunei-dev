@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+    <p class="section__eyebrow">Contato</p>
+    <h1 class="section__title">Vamos conversar</h1>
+    <p class="section__lead">
+      Canais oficiais da marca. Para o produto em destaque, abra o MyMuseum.
+    </p>
+
+    <ul class="contact-list">
+      @for (link of links; track link.href) {
+        <li>
+          <a class="contact-card panel" [href]="link.href" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__label">{{ link.label }}</span>
+            <span class="contact-card__hint">Abrir perfil</span>
+          </a>
+        </li>
+      }
+      <li>
+        <a class="contact-card panel contact-card--accent" [href]="museumUrl" target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__label">My Museum</span>
+          <span class="contact-card__hint">Ver produto ao vivo</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

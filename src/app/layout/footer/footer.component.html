@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand-block">
+      <a routerLink="/" class="footer__brand">{{ domain }}</a>
+      <p class="footer__copy">© {{ year }} Giunei. Software, produto e design.</p>
+    </div>
+
+    <nav class="footer__links" aria-label="Redes e produto">
+      @for (link of links; track link.href) {
+        <a [href]="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+      }
+      <a [href]="museumUrl" target="_blank" rel="noopener noreferrer">My Museum</a>
+    </nav>
+  </div>
+</footer>

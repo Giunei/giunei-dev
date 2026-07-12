@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container">
+    <p class="section__eyebrow">Sobre</p>
+    <h1 class="section__title">Marca, produto e engenharia</h1>
+    <p class="about__role">{{ role }} · {{ highlights.join(' · ') }}</p>
+    <p class="section__lead about__tagline">“{{ tagline }}”</p>
+
+    <div class="about__grid">
+      <article class="panel about__card">
+        <p class="section__eyebrow">Minha filosofia</p>
+        <h2 class="about__card-title">Aplicações completas</h2>
+        <p class="about__text">{{ philosophy }}</p>
+        <p class="about__label">Tenho foco em:</p>
+        <ul class="focus-list">
+          @for (item of focus; track item) {
+            <li class="focus-list__item">{{ item }}</li>
+          }
+        </ul>
+      </article>
+
+      <article class="panel about__card">
+        <p class="section__eyebrow">Toolbox</p>
+        <h2 class="about__card-title">Tecnologias</h2>
+        <p class="about__text">
+          Do backend à interface — ferramentas que uso para entregar produtos com performance e UX claras.
+        </p>
+        <ul class="tech-chips">
+          @for (tech of stack; track tech) {
+            <li class="tech-chips__item">{{ tech }}</li>
+          }
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

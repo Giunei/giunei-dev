@@ -1,0 +1,110 @@
+<section class="hero">
+  <div class="hero__glow hero__glow--pink" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--violet" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--center" aria-hidden="true"></div>
+
+  <div class="container hero__content">
+    <p class="hero__brand">G I U N E I</p>
+    <p class="hero__role">{{ role }}</p>
+    <p class="hero__stack">{{ highlights.join(' · ') }}</p>
+    <p class="hero__tagline">“{{ tagline }}”</p>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" routerLink="/projetos">Ver Projetos</a>
+      <a class="btn btn--ghost" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+        Meu GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section flagship">
+  <div class="container">
+    <p class="section__eyebrow">Produto em destaque</p>
+    <div class="flagship__head">
+      <h2 class="section__title flagship__title">
+        <span class="flagship__mark" aria-hidden="true">🏛</span>
+        {{ featured.name }}
+      </h2>
+      <p class="section__lead">{{ featured.description }}</p>
+    </div>
+
+    <figure class="flagship__visual panel">
+      <img
+        [src]="featured.image"
+        [alt]="'Tela do ' + featured.name"
+        width="1600"
+        height="900"
+        loading="eager"
+      />
+    </figure>
+
+    <div class="flagship__meta">
+      <h3 class="flagship__meta-title">Tecnologias</h3>
+      <ul class="tech-chips">
+        @for (tech of featured.technologies; track tech) {
+          <li class="tech-chips__item">{{ tech }}</li>
+        }
+      </ul>
+      <a class="btn btn--primary flagship__cta" [href]="featured.href" target="_blank" rel="noopener noreferrer">
+        Ver projeto
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section others-section">
+  <div class="container">
+    <p class="section__eyebrow">Mais no GitHub</p>
+    <h2 class="section__title">Outros projetos</h2>
+    <p class="section__lead">
+      APIs e experimentos que complementam o portfólio — o MyMuseum continua como destaque.
+    </p>
+
+    <ul class="others-section__list">
+      @for (project of others; track project.id) {
+        <li class="others-section__item panel">
+          <div>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.tagline }}</p>
+          </div>
+          <a class="btn btn--ghost" [href]="project.href" target="_blank" rel="noopener noreferrer">
+            Ver no GitHub
+          </a>
+        </li>
+      }
+    </ul>
+
+    <a class="btn btn--ghost others-section__link" routerLink="/projetos">Ver todos os projetos</a>
+  </div>
+</section>
+
+<section class="section stack-section">
+  <div class="container">
+    <p class="section__eyebrow">Toolbox</p>
+    <h2 class="section__title">Tecnologias</h2>
+    <p class="section__lead">
+      Stack que uso para construir produtos completos — do backend à experiência do usuário.
+    </p>
+    <ul class="tech-chips stack-section__chips">
+      @for (tech of stack; track tech) {
+        <li class="tech-chips__item">{{ tech }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section about-teaser">
+  <div class="container about-teaser__panel panel">
+    <p class="section__eyebrow">Minha filosofia</p>
+    <h2 class="section__title">Engenharia ponta a ponta</h2>
+    <p class="section__lead">{{ philosophy }}</p>
+    <p class="about-teaser__label">Tenho foco em:</p>
+    <ul class="focus-list">
+      @for (item of focus; track item) {
+        <li class="focus-list__item">{{ item }}</li>
+      }
+    </ul>
+    <a class="btn btn--ghost about-teaser__link" routerLink="/sobre">Conhecer mais</a>
+  </div>
+</section>

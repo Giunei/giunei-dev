@@ -1,0 +1,66 @@
+<section class="section">
+  <div class="container">
+    <p class="section__eyebrow">Projetos</p>
+    <h1 class="section__title">Produtos em destaque</h1>
+    <p class="section__lead">
+      Cases com cara de produto — não uma lista de bullets de currículo. O MyMuseum é o flagship.
+    </p>
+
+    <article class="case panel">
+      <div class="case__copy">
+        <p class="case__badge">Flagship</p>
+        <h2 class="case__title">
+          <span aria-hidden="true">🏛</span>
+          {{ featured.name }}
+        </h2>
+        <p class="case__tagline">{{ featured.tagline }}</p>
+        <p class="case__description">{{ featured.description }}</p>
+
+        <h3 class="case__meta-title">Tecnologias</h3>
+        <ul class="tech-chips">
+          @for (tech of featured.technologies; track tech) {
+            <li class="tech-chips__item">{{ tech }}</li>
+          }
+        </ul>
+
+        <a class="btn btn--primary case__cta" [href]="featured.href" target="_blank" rel="noopener noreferrer">
+          Ver projeto
+        </a>
+      </div>
+
+      @if (featured.image) {
+        <figure class="case__visual">
+          <img [src]="featured.image" [alt]="'Tela do ' + featured.name" width="1400" height="788" loading="lazy" />
+        </figure>
+      }
+    </article>
+
+    <div class="others">
+      <h2 class="others__title">Outros projetos</h2>
+      @if (others.length === 0) {
+        <p class="others__empty">Novos cases entram aqui em breve.</p>
+      } @else {
+        <ul class="others__list">
+          @for (project of others; track project.id) {
+            <li class="others__item panel">
+              <div>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.tagline }}</p>
+                @if (project.technologies.length) {
+                  <ul class="tech-chips others__tech">
+                    @for (tech of project.technologies; track tech) {
+                      <li class="tech-chips__item">{{ tech }}</li>
+                    }
+                  </ul>
+                }
+              </div>
+              <a class="btn btn--ghost" [href]="project.href" target="_blank" rel="noopener noreferrer">
+                Ver no GitHub
+              </a>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</section>

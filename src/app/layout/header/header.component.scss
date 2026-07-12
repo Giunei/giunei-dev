@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--header-height);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(16px);
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__mark {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.85rem;
+  font-weight: 800;
+  color: var(--brand-indigo-light);
+  background: rgba(99, 102, 241, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.28);
+}
+
+.header__name {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  span {
+    color: var(--brand-pink-soft);
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &.is-active {
+      color: #fff;
+    }
+  }
+}
+
+.header__cta {
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-md);
+  background: var(--brand-pink);
+  color: var(--surface-950) !important;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+
+  &:hover {
+    background: var(--brand-pink-soft);
+  }
+}
+
+.header__menu-btn {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    margin: 0.3rem auto;
+    background: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+
+    a {
+      padding: 0.85rem 0.5rem;
+    }
+
+    .header__cta {
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    &--open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="container header__inner">
+    <a routerLink="/" class="header__brand" (click)="closeMenu()">
+      <span class="header__mark">G</span>
+      <span class="header__name">giunei<span>.dev</span></span>
+    </a>
+
+    <button
+      type="button"
+      class="header__menu-btn"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir menu"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header__nav" [class.header__nav--open]="menuOpen" aria-label="Principal">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <a class="header__cta" [href]="museum.path" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">
+        {{ museum.label }}
+      </a>
+    </nav>
+  </div>
+</header>

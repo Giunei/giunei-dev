@@ -2,7 +2,6 @@ export const environment = {
   production: false,
   brandName: 'Giunei',
   domain: 'giunei.dev',
-  /** Deploy atual do My Museum na Vercel (até museum.giunei.dev). */
-  museumUrl: 'https://my-museum-ui-zeta.vercel.app/',
-  museumProdUrl: 'https://museum.giunei.dev'
+  museumUrl: 'https://mymuseum.giunei.dev',
+  museumProdUrl: 'https://mymuseum.giunei.dev'
 };

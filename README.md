@@ -2,12 +2,12 @@
 
 Site oficial da marca **Giunei** — portfólio com foco em produto e engenharia.
 
-**Live:** [giunei.dev](https://giunei.dev) *(em breve)*  
-**Produto destaque:** [My Museum](https://my-museum-ui-zeta.vercel.app/)
+**Live:** [giunei.dev](https://giunei.dev)  
+**Produto destaque:** [My Museum](https://mymuseum.giunei.dev)
 
 ## Sobre
 
-Página da marca com estética alinhada ao [My Museum](https://github.com/Giunei/my-museum-ui): dark slate, acentos pink/violet e narrativa de produto. O MyMuseum aparece como case principal; demais projetos ficam no GitHub.
+Página da marca com estética alinhada ao My Museum: dark slate, acentos pink/violet e narrativa de produto. O MyMuseum aparece como case principal; demais projetos ficam no GitHub.
 
 ## Stack
 
@@ -43,12 +43,12 @@ public/assets/      # imagens estáticas
 
 ## Domínios
 
-| Projeto      | Produção atual                              | Alvo           |
-|--------------|---------------------------------------------|----------------|
-| Portfólio    | Vercel (este repo)                          | `giunei.dev`   |
-| My Museum    | `my-museum-ui-zeta.vercel.app`              | `museum.giunei.dev` |
+| Projeto   | URL                         |
+|-----------|-----------------------------|
+| Portfólio | [giunei.dev](https://giunei.dev) |
+| My Museum | [mymuseum.giunei.dev](https://mymuseum.giunei.dev) |
 
-URLs do My Museum ficam em `src/environments/environment*.ts` (`museumUrl`).
+URL do My Museum: `src/environments/environment*.ts` (`museumUrl`).
 
 ## Autor
 

@@ -107,11 +107,18 @@
 
 .others__item {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+  }
 
   h3 {
     margin: 0 0 0.35rem;
@@ -121,6 +128,14 @@
   p {
     margin: 0;
     color: var(--text-secondary);
+  }
+
+  .btn {
+    width: 100%;
+
+    @media (min-width: 640px) {
+      width: auto;
+    }
   }
 }
 

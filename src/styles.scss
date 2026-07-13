@@ -51,7 +51,7 @@ button {
 }
 
 .section {
-  padding-block: 4.5rem;
+  padding-block: clamp(3rem, 7vw, 4.5rem);
 }
 
 .section__eyebrow {
@@ -78,7 +78,7 @@ button {
 }
 
 .panel {
-  border-radius: var(--radius-xl);
+  border-radius: clamp(1.15rem, 3vw, var(--radius-xl));
   border: 1px solid var(--border-panel);
   background: var(--panel-bg);
   box-shadow: 0 40px 120px rgba(236, 72, 153, 0.08);

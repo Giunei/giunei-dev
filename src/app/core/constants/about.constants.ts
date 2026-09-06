@@ -13,6 +13,6 @@ export const ABOUT_FOCUS: string[] = [
 export const BRAND_TAGLINE =
   'Sempre tento aplicar a regra do bom escoteiro nos códigos: sempre deixe o local mais limpo do que quando você o encontrou.';
 
-export const BRAND_ROLE = 'Full Stack Developer';
+export const BRAND_ROLE = 'Java Developer';
 
 export const BRAND_HIGHLIGHTS = ['Java', 'Spring Boot', 'Angular'] as const;
